@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Routes
-import { AppRoutingModule } from './app-routing.module';
+import { PAGES_ROUTES } from './app.routes';
 
 // Components Login
 import { LoginComponent } from './login/login.component';
@@ -22,7 +22,7 @@ import { PagesModule } from './pages/pages.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    PAGES_ROUTES,
     PagesModule
   ],
   providers: [],

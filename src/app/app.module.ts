@@ -13,17 +13,19 @@ import { AppComponent } from './app.component';
 
 // Modulos
 import { PagesModule } from './pages/pages.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent
-  ],
+   ],
   imports: [
     BrowserModule,
     PAGES_ROUTES,
-    PagesModule
+    PagesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

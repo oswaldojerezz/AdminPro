@@ -1,0 +1,44 @@
+<div class="row animated fadeIn">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 *ngIf="medico.nombre" class="box-title m-b-0">Medico: {{ medico.nombre }}</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarMedico(f)">
+                        <div class="form-group">
+                            <label>Nombre del medico</label>
+                            <input [(ngModel)]="medico.nombre" name="nombre" required type="text" class="form-control" placeholder="Nombre Medico">
+                        </div>
+                        <div class="form-group">
+                            <label>Hospital</label>
+                            <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="medico.hospital" name="hospital" required class="form-control">
+                                <option>Seleccione Hospital</option>
+                                <option *ngFor="let hospital of hospitales" [value]="hospital._id" > {{hospital.nombre}} </option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"> <i class="fa fa-save" ></i> Guardar</button>
+                        <a routerLink="/medicos" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-body">
+            <h4> Hospital </h4>
+
+            <img [src]="hospital.img | imagen:'hospital'" class="rounded img-fluid" alt="">
+        </div>
+    </div>
+
+    <div class="col-md-3" *ngIf="medico._id">
+        <div class="card card-body">
+            <h4> Fotografia </h4>
+
+            <img (click)="cambiarFoto()" [src]="medico.img | imagen:'medico'" class="img-fluid circle pointer" alt="">
+        </div>
+
+    </div>
+
+</div>

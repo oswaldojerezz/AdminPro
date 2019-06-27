@@ -17,7 +17,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Instructions
 
 1.- Open Terminal Or CMD, Navigate to the folder where the project was downloaded
+
 2.- Use the command "npm install"
+
 3.- Use the command "npm start"
+
 4.- Log In The Application
 

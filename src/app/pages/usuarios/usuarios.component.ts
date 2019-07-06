@@ -3,7 +3,7 @@ import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
-declare var swal: any;
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-usuarios',
@@ -71,20 +71,11 @@ export class UsuariosComponent implements OnInit {
 
   borrarUsuario(usuario: Usuario) {
     if ( usuario._id === this._usuarioService.usuario._id ) {
-      swal('No puede borrar usuario', ' No se puede borrar a si mismo ', 'error');
+       swal('No puede borrar usuario', ' No se puede borrar a si mismo ', 'error');
+       return;
     }
 
-    swal({
-      title: 'Esta seguro?',
-      text: 'Esta a punto de borrar a ' + usuario.nombre,
-      icon: 'warning',
-      buttons: true,
-      dangerMode: true
-    }).then( borrar => {
-      if (borrar) {
-        this._usuarioService.borrarUsuario(usuario._id).subscribe( resp => {  this.desde = 0; this.cargarUsuarios(); });
-      }
-    });
+    this._usuarioService.borrarUsuario(usuario._id).subscribe( resp => {  this.desde = 0; this.cargarUsuarios(); });
   }
 
   guardarUsuario(usuario: Usuario) {

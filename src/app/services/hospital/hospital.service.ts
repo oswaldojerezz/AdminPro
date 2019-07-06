@@ -7,6 +7,9 @@ import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { Usuario } from 'src/app/models/usuario.model';
 import { Hospital } from '../../models/hospital.model';
 
+
+import swal from 'sweetalert';
+
 @Injectable({
   providedIn: 'root'
 })

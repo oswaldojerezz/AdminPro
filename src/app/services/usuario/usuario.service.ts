@@ -7,6 +7,8 @@ import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
+import swal from 'sweetalert';
+
 @Injectable({
   providedIn: 'root'
 })

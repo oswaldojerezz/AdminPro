@@ -4,7 +4,7 @@ import { URL_SERVICIOS } from '../../config/config';
 import { map } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
 import { Medico } from '../../models/medico.model';
-import { identifierModuleUrl } from '@angular/compiler';
+import swal from 'sweetalert';
 
 
 @Injectable({

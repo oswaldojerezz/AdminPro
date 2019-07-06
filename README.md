@@ -2,26 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
+This Project was a practice 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1.- MongoDb Running
 
-## Build
+2.- Backend Server App Running (Find it here -> https://github.com/oswaldojerezz/backend-server-U )
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Instructions
 
-## Running unit tests
+1.- Open Terminal Or CMD, Navigate to the folder where the project was downloaded
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2.- Use the command "npm install"
 
-## Running end-to-end tests
+3.- Use the command "npm start"
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4.- Log In The Application
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

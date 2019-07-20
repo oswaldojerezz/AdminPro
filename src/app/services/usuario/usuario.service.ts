@@ -8,6 +8,7 @@ import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import swal from 'sweetalert';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,32 @@ export class UsuarioService {
   constructor(
     public http: HttpClient,
     // tslint:disable-next-line:variable-name
-    public _subirArchivoService: SubirArchivoService
+    public _subirArchivoService: SubirArchivoService,
+    public router: Router
     ) { this.cargarStorage(); }
+
+    renuevaToken() {
+      let url = URL_SERVICIOS + '/login/renuevatoken';
+      url += '?token' + this.token;
+
+      return this.http.get(url).pipe(map( (resp: any) => {
+        this.token = resp.token;
+        sessionStorage.setItem('token', this.token);
+        return true;
+      }),
+      catchError(err =>
+        of([
+          console.log('HTTP Error', err.status),
+          swal(
+           'No se pudo revonar token',
+            err.error.mensaje,
+            'error'
+           ),
+           this.logout()
+         ])
+      ));
+    }
+
 
     // *******************************************
     //               LOGIN
